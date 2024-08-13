@@ -99,12 +99,13 @@
 
                                     <td>
                                         <a href="{{ route('admin.products.edit', $item) }}"
-                                        type="submit" class="btn btn-warning">Edit</a>
-                                        <form action="{{route('admin.products.destroy',$item)}}" method="post">
-                                            @method('DELETE')
+                                        type="submit" class="btn btn-warning">Sửa</a>
+                                        <form action="{{ route('admin.products.destroy', $item) }}" method="post">
                                             @csrf
-                                            <button type="submit" class="btn btn-danger mb-3" onclick="return confirm('Coá chắc chắn không!!!')">Xoá</button>
-    
+                                            @method('DELETE')
+                                            <button
+                                                onclick="return confirm('Chắc chắn không?')"
+                                                type="submit" class="btn btn-danger">Xoá</button>
                                         </form>
                                         </td>
 

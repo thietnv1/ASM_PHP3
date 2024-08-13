@@ -34,13 +34,13 @@
                     <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle"
                         style="width:100%">
                         <thead>
-                               {{-- <th scope="col" style="width: 10px;">
+                            {{-- <th scope="col" style="width: 10px;">
                                     <div class="form-check">
                                         <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
                                     </div>
                                 </th> --}}
                             <tr>
-                             
+
 
                                 <th>ID</th>
                                 <th>Name</th>
@@ -112,8 +112,10 @@
     <script src="assets/js/pages/datatables.init.js"></script>
     <!-- App js -->
     <script>
-       new DataTable('#example', {
-    order: [[1, 'desc']]
-});
+        new DataTable('#example', {
+            order: [
+                [1, 'desc']
+            ]
+        });
     </script>
 @endsection

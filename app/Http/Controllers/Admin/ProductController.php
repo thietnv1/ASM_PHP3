@@ -67,6 +67,7 @@ class ProductController extends Controller
             /** @var Product $product */
             $product = Product::query()->create($dataProduct);
 
+
             foreach ($dataProductVariants as $item) {
                 $item += ['product_id' => $product->id];
 
@@ -105,6 +106,7 @@ class ProductController extends Controller
             }
 
             return back()->with('error', $exception->getMessage());
+           
         }
         //throw $th;
     }
@@ -228,7 +230,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // dd($product->galleries()->delete());
+        // Trong thực tế, chức năng xóa phải là xóa mềm
+        // Dưới đây code chỉ dành cho làm cơ bản
         try {
             $dataHasImage = $product->galleries->toArray() + $product->variants->toArray();
 
